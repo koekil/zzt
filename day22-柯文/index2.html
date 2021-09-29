@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除边距样式 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 定义总盒子样式 */
+        .wrap{
+            width: 1200px;
+            height: 444px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 0 30px 2px #fff;
+            border-radius: 20px;
+        }
+        /* 定义小盒子样式 */
+        .wrap>div{
+            width: 250px;
+            height: 100%;
+            transition: .2s;
+        }
+        .wrap>div:hover{
+            transform: translateY(-100px);
+        }
+        .wrap>div:first-of-type:hover{
+            border-bottom-left-radius: 0;
+        }
+        .wrap>div:last-of-type:hover{
+            border-bottom-right-radius: 0;
+        }
+        .wrap>div:nth-of-type(1){
+            background: url(./img/2.jpg) no-repeat center/cover;
+            border-radius: 20px 0 0 20px;
+        }
+        .wrap>div:nth-of-type(2){
+            background: url(./img/3.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(3){
+            background: url(./img/4.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(4){
+            background: url(./img/5.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(5){
+            background: url(./img/6.jpg) no-repeat center/cover;
+            border-radius: 0 20px 20px 0;
+        }
+        /* 定义body背景图片 */
+        .bg{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            /* background-color: hotpink; */
+            background: url(./img/bg.jpg) no-repeat center/cover;
+            filter: blur(2px) brightness(30%);
+        }
+        /* 定义hover显示小盒子样式 */
+        .wrap>div>div{
+            width: 100%;
+            height: 100px;
+            background-color: #fff;
+            position: relative;
+            top: 444px;
+            /* display: none; */
+            opacity: 0;
+            text-align: center;
+            line-height: 100px;
+            transition: .2s ease-in;
+
+        }
+        .wrap>div:first-of-type div{
+            border-radius: 20px 0 0 20px;
+        }
+        .wrap>div:last-of-type div{
+            border-radius: 0 20px 20px 0;
+        }
+        .wrap>div:hover div{
+            /* display: block; */
+            opacity: 1;
+        }
+        .wrap>div:first-of-type:hover div{
+            border-top-left-radius: 0;
+        }
+        .wrap>div:last-of-type:hover div{
+            border-top-right-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div><div>你好，世界！</div></div>
+        <div><div>你好，世界！</div></div>
+        <div><div>你好，世界！</div></div>
+        <div><div>你好，世界！</div></div>
+        <div><div>你好，世界！</div></div>
+    </div>
+    <!-- 背景设置 -->
+    <div class="bg"></div>
+</body>
+</html>

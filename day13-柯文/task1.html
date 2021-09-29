@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .wrap{
+            box-sizing: border-box;
+            border: 5px solid gray;
+            width: 300px;
+            height: 400px;
+            margin: 100px auto;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .wrap:hover{
+            border: 5px solid red;
+        }
+        .title{
+            border-bottom: 1px dashed gray;
+            /* background-color: green; */
+            padding: 10px;
+        }
+        .title>p{
+            text-indent: 1em;
+        }
+        .title div{
+            display: inline-block;
+            vertical-align: middle;
+            /* background-color: red; */
+            margin-left: 10px;
+        }
+        p{
+            line-height: 35px;
+            /* background-color: green; */
+        }
+        .title div p+p{
+            color: gray;
+        }
+        img{
+            border-radius: 50%;
+            border: 5px solid #ddd;
+            vertical-align: middle;
+        }
+        .wrap>p{
+            font-size: 14px;
+            color: gray;
+            text-indent: 2em;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="title">
+            <p><strong>个人中心</strong></p>
+            <img src="./img/1.jpg" width="80px" height="80px" alt="">
+            <div>
+                <p>你的名字</p>
+                <p>这里是简介</p>
+            </div>
+        </div>
+        <p>习近平总书记多次强调学习的重要性，并经常引用古语“劝学”“促学”。又是一年开学季，让我们走进一幅幅沙画，重温古语背后的“学习之道”。</p>
+    </div>
+</body>
+</html>

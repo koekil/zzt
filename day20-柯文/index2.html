@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除默认边距 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 总盒子样式 */
+        .wrap {
+            width: 800px;
+            height: 450px;
+            /* background-color: salmon; */
+            position: relative;
+            margin: 100px auto;
+        }
+        /* input位置 */
+        .wrap input{
+            position: absolute;
+            bottom: 10px;
+        }
+        .wrap input:nth-of-type(1){
+            left: 40%;
+        }
+        .wrap input:nth-of-type(2){
+            left: 45%;
+        }
+        .wrap input:nth-of-type(3){
+            left: 50%;
+        }
+        .wrap input:nth-of-type(4){
+            left: 55%;
+        }
+        .wrap input:nth-of-type(5){
+            left: 60%;
+        }
+        /* 图片位置 */
+        .wrap img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+            transition: 1s;
+        }
+        /* 点击切换图片 */
+        .wrap input:nth-of-type(1):checked~img:nth-of-type(1), .wrap input:nth-of-type(1):checked~div:nth-of-type(1){
+            opacity: 1;
+        }
+        .wrap input:nth-of-type(2):checked~img:nth-of-type(2), .wrap input:nth-of-type(2):checked~div:nth-of-type(2){
+            opacity: 1;
+        }
+        .wrap input:nth-of-type(3):checked~img:nth-of-type(3), .wrap input:nth-of-type(3):checked~div:nth-of-type(3){
+            opacity: 1;
+        }
+        .wrap input:nth-of-type(4):checked~img:nth-of-type(4), .wrap input:nth-of-type(4):checked~div:nth-of-type(4){
+            opacity: 1;
+        }
+        .wrap input:nth-of-type(5):checked~img:nth-of-type(5), .wrap input:nth-of-type(5):checked~div:nth-of-type(5){
+            opacity: 1;
+        }
+        /* 大背景切换 */
+        .wrap div{
+            width: 100%;
+            height: 100%;
+            /* background-color: aquamarine; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            opacity: 0;
+            filter: brightness(30%);
+            transition: 1s;
+        }
+        .wrap>div:nth-of-type(1){
+            background: url(./img/2.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(2){
+            background: url(./img/3.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(3){
+            background: url(./img/4.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(4){
+            background: url(./img/5.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(5){
+            background: url(./img/6.jpg) no-repeat center/cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <input type="radio" name="pic" id="" checked>
+        <input type="radio" name="pic" id="">
+        <input type="radio" name="pic" id="">
+        <input type="radio" name="pic" id="">
+        <input type="radio" name="pic" id="">
+        <img src="./img/2.jpg" alt="">
+        <img src="./img/3.jpg" alt="">
+        <img src="./img/4.jpg" alt="">
+        <img src="./img/5.jpg" alt="">
+        <img src="./img/6.jpg" alt="">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,495 @@
+/* 清除通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 设置wrap盒子大小位置 */
+.wrap {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 400px auto 0;
+    /* border: 2px solid red; */
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(30deg);
+    animation: move 20s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 鼠标悬停wrap盒子停止旋转 */
+.wrap:hover {
+    animation-play-state: paused;
+}
+/* wrap盒子自身360度旋转 */
+@keyframes move {
+    0% {
+        transform: rotateX(-15deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(-15deg) rotateY(360deg);
+    }
+}
+
+/* 设置小盒子大小位置 */
+.wrap>div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.wrap>div:nth-of-type(1) {
+    /* background-color: royalblue; */
+    transform: translateZ(200px);
+    animation: moveZ1 30s linear infinite;
+}
+/* wrap盒子的一个面向外延展动画 */
+@keyframes moveZ1{
+    0%{
+        transform: translateZ(200px);
+    }
+    50%{
+        transform: translateZ(500px);
+    }
+    100%{
+        transform: translateZ(200px);
+    }
+}
+
+.wrap>div:nth-of-type(2) {
+    /* background-color: saddlebrown; */
+    transform: rotateY(120deg) translateZ(200px);
+    animation: moveZ2 30s linear infinite;
+}
+/* wrap盒子的一个面向外延展动画 */
+@keyframes moveZ2{
+    0%{
+        transform: rotateY(120deg) translateZ(200px);
+    }
+    50%{
+        transform: rotateY(120deg) translateZ(500px);
+    }
+    100%{
+        transform: rotateY(120deg) translateZ(200px);
+    }
+}
+
+.wrap>div:nth-of-type(3) {
+    /* background-color: hotpink; */
+    transform: rotateY(240deg) translateZ(200px);
+    animation: moveZ3 30s linear infinite;
+}
+/* wrap盒子的一个面向外延展动画 */
+@keyframes moveZ3{
+    0%{
+        transform: rotateY(240deg) translateZ(200px);
+    }
+    50%{
+        transform: rotateY(240deg) translateZ(500px);
+    }
+    100%{
+        transform: rotateY(240deg) translateZ(200px);
+    }
+}
+/* box引力线1 */
+.wrap>div:nth-of-type(4){
+    width: 500px;
+    height: 500px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transform: rotateX(90deg);
+    border-radius: 50%;
+}
+/* box引力线2 */
+.wrap>div:nth-of-type(5){
+    width: 700px;
+    height: 700px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transform: rotateX(90deg);
+    border-radius: 50%;
+}
+/* box引力线3 */
+.wrap>div:nth-of-type(6){
+    width: 900px;
+    height: 900px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transform: rotateX(90deg);
+    border-radius: 50%;
+}
+.wrap>div:nth-of-type(n):hover{
+    animation-play-state: paused;
+}
+
+/* box盒子每个面的位置进行合体*/
+.box {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: aa 10s linear infinite;
+    /* background-color: snow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* box盒子自身360度旋转动画 */
+@keyframes aa {
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.box>li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* opacity: .5; */
+}
+
+.box>li:nth-child(1) {
+    background: url(../img/1.jpg) no-repeat center/cover;
+    transform-origin: bottom center;
+    transform: translateZ(50px) translateY(-100px) rotateX(90deg);
+    transition: transform 2s;
+}
+
+.box>li:nth-child(2) {
+    background: url(../img/1.jpg) no-repeat center/cover;
+    transform: translateY(50px) rotateX(90deg);
+}
+
+.box>li:nth-child(3) {
+    background: url(../img/1.jpg) no-repeat center/cover;
+    transform-origin: bottom center;
+    transform: translateX(-50px) rotateY(-90deg) rotateX(0deg);
+    transition: transform 2s;
+}
+
+.box>li:nth-child(4) {
+    background: url(../img/1.jpg) no-repeat center/cover;
+    transform-origin: bottom center;
+    transform: translateX(50px) rotateY(90deg) rotateX(0deg);
+    transition: transform 2s;
+}
+
+.box>li:nth-child(5) {
+    background: url(../img/1.jpg) no-repeat center/cover;
+    transform-origin: bottom center;
+    transform: translateZ(-50px) rotateX(0deg) rotateY(180deg);
+    transition: transform 2s;
+}
+
+.box>li:nth-child(6) {
+    background: url(../img/1.jpg) no-repeat center/cover;
+    transform-origin: bottom center;
+    transform: translateZ(50px) rotateX(0deg);
+    transition: transform 2s;
+}
+
+/* 鼠标悬停box盒子解体效果 */
+.box:hover{
+    animation-play-state: paused;
+}
+.box:hover>li:nth-child(1) {
+    transform: translateZ(150px) rotateX(-90deg);
+}
+
+.box:hover>li:nth-child(3) {
+    transform: translateX(-50px) rotateY(-90deg) rotateX(-90deg);
+}
+
+.box:hover>li:nth-child(4) {
+    transform: translateX(50px) rotateY(90deg) rotateX(-90deg);
+}
+
+.box:hover>li:nth-child(5) {
+    transform: translateZ(-50px) rotateX(90deg) rotateY(180deg);
+}
+
+.box:hover>li:nth-child(6) {
+    transform: translateZ(50px) rotateX(-90deg);
+}
+
+/* 设置第一个box里的水晶文字样式 */
+.text>li:nth-child(n+7){
+    width: 90px;
+    height: 50px;
+    box-shadow: 0 0 2px 2px white;
+}
+.text>li:nth-child(7){
+    transform: translateY(-25px) rotateX(90deg);
+    /* background-color: red; */
+}
+.text>li:nth-child(8){
+    transform: translateY(25px) rotateX(90deg);
+    /* background-color: indigo; */
+}
+.text>li:nth-child(9){
+    transform: translateZ(-25px);
+}
+.text>li:nth-child(10){
+    transform: translateZ(25px);
+}
+.text>li:nth-child(11){
+    box-shadow: none;
+    color: red;
+    font-size: 1.4em;
+    font-weight: bolder;
+    line-height: 50px;
+}
+
+/* 设置第二个box里的球形样式 */
+.ball>li:nth-child(n+7){
+    border-radius: 50%;
+    box-shadow: 0 0 5px 2px rgb(255, 255, 255);
+}
+/* 设置第二个box里的球形Z轴面 */
+.ball>li:nth-child(7){
+    /* background-color: red; */
+    width: 95%;
+    height: 95%;
+}
+.ball>li:nth-child(8){
+    /* background-color: rosybrown; */
+    transform: translateZ(10px);
+    width: 80%;
+    height: 80%;
+}
+.ball>li:nth-child(9){
+    /* background-color: royalblue; */
+    transform: translateZ(20px);
+    width: 60%;
+    height: 60%;
+}
+.ball>Li:nth-child(10){
+    /* background-color: saddlebrown; */
+    transform: translateZ(30px);
+    width: 40%;
+    height: 40%;
+}
+.ball>li:nth-child(11){
+    /* background-color: salmon; */
+    transform: translateZ(40px);
+    width: 20%;
+    height: 20%;
+}
+.ball>li:nth-child(12){
+    /* background-color: sandybrown; */
+    transform: translateZ(48px);
+    width: 10%;
+    height: 10%;
+}
+.ball>li:nth-child(13){
+    /* background-color: seagreen; */
+    transform: translateZ(-48px);
+    width: 10%;
+    height: 10%;
+}
+.ball>li:nth-child(14){
+    /* background-color: sienna; */
+    transform: translateZ(-40px);
+    width: 20%;
+    height: 20%;
+}
+.ball>li:nth-child(15){
+    /* background-color: khaki; */
+    transform: translateZ(-30px);
+    width: 40%;
+    height: 40%;
+}
+.ball>li:nth-child(16){
+    /* background-color: lawngreen; */
+    transform: translateZ(-20px);
+    width: 60%;
+    height: 60%;
+}
+.ball>li:nth-child(17){
+    /* background-color: lightblue; */
+    transform: translateZ(-10px);
+    width: 80%;
+    height: 80%;
+}
+
+/* 设置第二个box里的球形X轴面 */
+.ball>li:nth-child(18){
+    /* background-color: green; */
+    transform: rotateY(90deg);
+    width: 95%;
+    height: 95%;
+}
+.ball>li:nth-child(19){
+    /* background-color: rosybrown; */
+    transform: translateX(10px) rotateY(90deg);
+    width: 80%;
+    height: 80%;
+}
+.ball>li:nth-child(20){
+    /* background-color: royalblue; */
+    transform: translateX(20px) rotateY(90deg);
+    width: 60%;
+    height: 60%;
+}
+.ball>Li:nth-child(21){
+    /* background-color: saddlebrown; */
+    transform: translateX(30px) rotateY(90deg);
+    width: 40%;
+    height: 40%;
+}
+.ball>li:nth-child(22){
+    /* background-color: salmon; */
+    transform: translateX(40px) rotateY(90deg);
+    width: 20%;
+    height: 20%;
+}
+.ball>li:nth-child(23){
+    /* background-color: sandybrown; */
+    transform: translateX(48px) rotateY(90deg);
+    width: 10%;
+    height: 10%;
+}
+.ball>li:nth-child(24){
+    /* background-color: seagreen; */
+    transform: translateX(-48px) rotateY(90deg);
+    width: 10%;
+    height: 10%;
+}
+.ball>li:nth-child(25){
+    /* background-color: sienna; */
+    transform: translateX(-40px) rotateY(90deg);
+    width: 20%;
+    height: 20%;
+}
+.ball>li:nth-child(26){
+    /* background-color: khaki; */
+    transform: translateX(-30px) rotateY(90deg);
+    width: 40%;
+    height: 40%;
+}
+.ball>li:nth-child(27){
+    /* background-color: lawngreen; */
+    transform: translateX(-20px) rotateY(90deg);
+    width: 60%;
+    height: 60%;
+}
+.ball>li:nth-child(28){
+    /* background-color: lightblue; */
+    transform: translateX(-10px) rotateY(90deg);
+    width: 80%;
+    height: 80%;
+}
+
+/* 设置第二个box里的球形Y轴面 */
+.ball>li:nth-child(29){
+    /* background-color: black; */
+    transform: rotateX(90deg);
+    width: 95%;
+    height: 95%;
+}
+.ball>li:nth-child(30){
+    /* background-color: rosybrown; */
+    transform: translateY(10px) rotateX(90deg);
+    width: 80%;
+    height: 80%;
+}
+.ball>li:nth-child(31){
+    /* background-color: royalblue; */
+    transform: translateY(20px) rotateX(90deg);
+    width: 60%;
+    height: 60%;
+}
+.ball>Li:nth-child(32){
+    /* background-color: saddlebrown; */
+    transform: translateY(30px) rotateX(90deg);
+    width: 40%;
+    height: 40%;
+}
+.ball>li:nth-child(33){
+    /* background-color: salmon; */
+    transform: translateY(40px) rotateX(90deg);
+    width: 20%;
+    height: 20%;
+}
+.ball>li:nth-child(34){
+    /* background-color: sandybrown; */
+    transform: translateY(48px) rotateX(90deg);
+    width: 10%;
+    height: 10%;
+}
+.ball>li:nth-child(35){
+    /* background-color: seagreen; */
+    transform: translateY(-48px) rotateX(90deg);
+    width: 10%;
+    height: 10%;
+}
+.ball>li:nth-child(36){
+    /* background-color: sienna; */
+    transform: translateY(-40px) rotateX(90deg);
+    width: 20%;
+    height: 20%;
+}
+.ball>li:nth-child(37){
+    /* background-color: khaki; */
+    transform: translateY(-30px) rotateX(90deg);
+    width: 40%;
+    height: 40%;
+}
+.ball>li:nth-child(38){
+    /* background-color: lawngreen; */
+    transform: translateY(-20px) rotateX(90deg);
+    width: 60%;
+    height: 60%;
+}
+.ball>li:nth-child(39){
+    /* background-color: lightblue; */
+    transform: translateY(-10px) rotateX(90deg);
+    width: 80%;
+    height: 80%;
+}
+
+/* 设置第三个box里的爱心跳动 */
+.love>li:last-of-type{
+    /* border: 1px solid white; */
+    animation: cc 1s ease-in-out infinite alternate;
+}
+@keyframes cc{
+    0%{
+        transform: scale(.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.love>li:last-of-type::before{
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 80px;
+    background-color: red;
+    transform-origin: bottom right;
+    transform: rotateZ(45deg);
+    border-radius: 25px 25px 0 0;
+}
+.love>li:last-of-type::after{
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 80px;
+    background-color: red;
+    transform-origin: bottom left;
+    transform: rotateZ(-45deg);
+    border-radius: 25px 25px 0 0;
+}
+
+/* 设置背景视频 */
+video{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}

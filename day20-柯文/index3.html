@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除边距 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 总盒子样式 */
+        .wrap {
+            width: 1200px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            /* background-color: seagreen; */
+        }
+        /* 第一个和最后一个加圆角 */
+        .wrap>div {
+            float: left;
+        }
+        .wrap>div:first-of-type{
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        .wrap>div:last-of-type{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        /* 点击切换图片样式 */
+        .wrap>div>input{
+            width: 100px;
+            height: 500px;
+            opacity: 0;
+        }
+        .wrap>div>input:checked{
+            width: 800px;
+        }
+        .wrap>div:nth-of-type(1){
+            background: url(./img/2.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(2){
+            background: url(./img/3.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(3){
+            background: url(./img/4.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(4){
+            background: url(./img/5.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(5){
+            background: url(./img/6.jpg) no-repeat center/cover;
+        }
+        /* 大背景 */
+        .bg{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: none;
+            filter: brightness(30%);
+            /* background-color: sienna; */
+        }
+        .wrap>div>input:checked+.bg{
+            display: block;
+        }
+        .wrap>div:nth-of-type(1) .bg{
+            background: url(./img/2.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(2) .bg{
+            background: url(./img/3.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(3) .bg{
+            background: url(./img/4.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(4) .bg{
+            background: url(./img/5.jpg) no-repeat center/cover;
+        }
+        .wrap>div:nth-of-type(5) .bg{
+            background: url(./img/6.jpg) no-repeat center/cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>
+            <input type="radio" name="pic" id="" checked>
+            <div class="bg"></div>
+        </div>
+        <div>
+            <input type="radio" name="pic" id="">
+            <div class="bg"></div>
+        </div>
+        <div>
+            <input type="radio" name="pic" id="">
+            <div class="bg"></div>
+        </div>
+        <div>
+            <input type="radio" name="pic" id="">
+            <div class="bg"></div>
+        </div>
+        <div>
+            <input type="radio" name="pic" id="">
+            <div class="bg"></div>
+        </div>
+    </div>
+</body>
+
+</html>

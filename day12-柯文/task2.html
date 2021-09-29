@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .box{
+            width: 250px;
+            height: 310px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        dl dt{
+            font-size: 25px;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+        dl dt span{
+            font-size: 20px;
+            color: #ccc;
+            margin-left: 10px;
+        }
+        dl dd{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 30px;
+            font-size: 14px;
+        }
+        dl dd:nth-child(2){
+            background: url(./img/2.png) no-repeat 0px 12px;
+        }
+        dl dd:nth-child(3){
+            background: url(./img/2.png) no-repeat 0px -18px;
+        }
+        dl dd:nth-child(4){
+            background: url(./img/2.png) no-repeat 0px -48px;
+        }
+        dl dd:nth-child(5){
+            background: url(./img/2.png) no-repeat 0px -78px;
+        }
+        dl dd:nth-child(6){
+            background: url(./img/2.png) no-repeat 0px -108px;
+        }
+        dl dd:nth-child(7){
+            background: url(./img/2.png) no-repeat 0px -138px;
+        }
+        dl dd:nth-child(8){
+            background: url(./img/2.png) no-repeat 0px -168px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <dl>
+            <dt>潮流排行<span>Most Read</span></dt>
+            <dd>恩施知名企业家被股东驾车撞伤致死</dd>
+            <dd>耿爽谈外军撤出阿富汗:纠错的开始</dd>
+            <dd>华南海鲜市场疫情或冷链引入病毒</dd>
+            <dd>3名留学生遭美方盘查遣返 中方回应</dd>
+            <dd>云南新增1例本土无症状感染者</dd>
+            <dd>网传阿里解雇10名外泄内网文章员工</dd>
+            <dd>薇娅带货的低脂全麦欧包低标能量</dd>
+        </dl>
+    </div>
+</body>
+</html>
